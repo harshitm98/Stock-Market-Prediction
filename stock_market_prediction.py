@@ -17,8 +17,14 @@ import pandas as pd
 dataset = pd.read_csv('Nifty_minute_data/banknifty.csv')
 X = dataset.iloc[:,3:6].fillna(method = 'pad').values
 y = dataset.iloc[:, 6].fillna(method = 'pad').values
-X = X[:-1, :]
-y = y[1:]
+X_1 = y[:-4][np.newaxis]
+X_2 = y[1:-3][np.newaxis]
+X_3 = y[2:-2][np.newaxis]
+X = X[3:-1, :]
+y = y[4:]
+X  = np.append(X, X_1.T, axis = 1)
+X = np.append(X, X_2.T, axis = 1)
+X = np.append(X, X_3.T, axis = 1)
 length_train = int(len(X)*0.8)
 
 # Splitting the data
