@@ -58,3 +58,5 @@ plt.xlabel('Time stamp')
 plt.ylabel('Value of the stock')
 plt.title('Stock Prediction for Bank Nifty')
 plt.show()
+
+plt.savefig('C:/Users/Ambika/Desktop/CS/Stock Market Prediction/stock_prediction_using_Random_Forest.png', dpi = 72)
